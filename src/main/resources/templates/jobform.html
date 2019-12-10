@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Job Form</h1>
+<form action="#" th:action="@{/process}" th:object="${job}" method="post">
+
+    Title: <input type="text" th:field="*{titleOne}" />
+    <span th:if="${#fields.hasErrors('titleOne')}"
+          th:errors="*{titleOne}"></span><br />
+
+
+
+        Employer: <input type="text" th:field="*{employerOne}"/>
+        <span th:if="${#fields.hasErrors('employerOne')}"
+        th:errors="*{employerOne}"></span><br />
+
+        Description:<textarea rows="3" th:field="*{descriptionOne}" />
+        <span th:if="${#fields.hasErrors('descriptionOne')}"
+        th:errors="*{descriptionOne}"></span>
+        <br />
+
+        <input type = "submit" values = "Submit" />
+</form>
+
+
+</body>
+</html>
